@@ -13,7 +13,9 @@ namespace AService.DAL
 
         public ProductGateway()
         {
-            IEnumerable<XElement> productXElements = XElement.Load(@"C:\Users\marvin.wei\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml").Element("Products").Elements("Product");
+            //string path = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
+            string path = @"C:\Users\Administrator\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
+            IEnumerable<XElement> productXElements = XElement.Load(path).Element("Products").Elements("Product");
             products = ProductMapping.Convert(productXElements);
         }
 
