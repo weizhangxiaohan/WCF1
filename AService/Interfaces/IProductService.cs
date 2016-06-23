@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
+using AService.DAL;
 
 namespace AService.Interfaces
 {
@@ -12,5 +13,8 @@ namespace AService.Interfaces
     {
         [OperationContract]
         int GetProductInventory(string productCode);
+
+        [OperationContract]
+        IEnumerable<Product> GetProducts();
     }
 }

@@ -12,8 +12,15 @@ namespace AService
     {
         static void Main(string[] args)
         {
-            ServiceHost productService = new ServiceHost(typeof(ProductService));
-            productService.Open();
+            try
+            {
+                ServiceHost productService = new ServiceHost(typeof(ProductService));
+                productService.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
 
             Console.WriteLine("Started");
             Console.ReadKey();

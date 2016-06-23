@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?> 
+<DataBase>
+  <Products>
+    <Product>
+      <ProductCode>1</ProductCode>
+      <ProductName>product1</ProductName>
+      <Inventory>1</Inventory>
+    </Product>
+    <Product>
+      <ProductCode>2</ProductCode>
+      <ProductName>product2</ProductName>
+      <Inventory>2</Inventory>
+    </Product>
+    <Product>
+      <ProductCode>3</ProductCode>
+      <ProductName>product3</ProductName>
+      <Inventory>3</Inventory>
+    </Product>
+    <Product>
+      <ProductCode>4</ProductCode>
+      <ProductName>product4</ProductName>
+      <Inventory>4</Inventory>
+    </Product>
+    <Product>
+      <ProductCode>5</ProductCode>
+      <ProductName>product5</ProductName>
+      <Inventory>5</Inventory>
+    </Product>
+    <Product>
+      <ProductCode>6</ProductCode>
+      <ProductName>product6</ProductName>
+      <Inventory>6</Inventory>
+    </Product>
+  </Products>
+</DataBase>
