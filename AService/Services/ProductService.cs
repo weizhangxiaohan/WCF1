@@ -12,6 +12,11 @@ namespace AService.Services
     {
         ProductGateway productGateway = new ProductGateway();
 
+        public void CreateProduct(Product product)
+        {
+            productGateway.CreateProduct(product);
+        }
+
         public int GetProductInventory(string productCode)
         {
             Product product = productGateway.FindByProductCode(productCode);
@@ -21,6 +26,11 @@ namespace AService.Services
         public IEnumerable<Product> GetProducts()
         {
             return productGateway.GetAllProducts();
+        }
+
+        public void UpdateProduct(Product product)
+        {
+            productGateway.UpdateProduct(product);
         }
     }
 }

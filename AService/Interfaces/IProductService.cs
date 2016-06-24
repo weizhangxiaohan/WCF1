@@ -16,5 +16,11 @@ namespace AService.Interfaces
 
         [OperationContract]
         IEnumerable<Product> GetProducts();
+
+        [OperationContract]
+        void CreateProduct(Product product);
+
+        [OperationContract]
+        void UpdateProduct(Product product);
     }
 }

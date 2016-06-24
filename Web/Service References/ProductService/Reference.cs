@@ -23,10 +23,10 @@ namespace Web.ProductService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int InventoryField;
+        private string IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ProductCodeField;
+        private int InventoryField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ProductNameField;
@@ -42,6 +42,19 @@ namespace Web.ProductService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.IdField, value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int Inventory {
             get {
                 return this.InventoryField;
@@ -50,19 +63,6 @@ namespace Web.ProductService {
                 if ((this.InventoryField.Equals(value) != true)) {
                     this.InventoryField = value;
                     this.RaisePropertyChanged("Inventory");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string ProductCode {
-            get {
-                return this.ProductCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProductCodeField, value) != true)) {
-                    this.ProductCodeField = value;
-                    this.RaisePropertyChanged("ProductCode");
                 }
             }
         }
@@ -105,6 +105,18 @@ namespace Web.ProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProducts", ReplyAction="http://tempuri.org/IProductService/GetProductsResponse")]
         System.Threading.Tasks.Task<Web.ProductService.Product[]> GetProductsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateProduct", ReplyAction="http://tempuri.org/IProductService/CreateProductResponse")]
+        void CreateProduct(Web.ProductService.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateProduct", ReplyAction="http://tempuri.org/IProductService/CreateProductResponse")]
+        System.Threading.Tasks.Task CreateProductAsync(Web.ProductService.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        void UpdateProduct(Web.ProductService.Product product);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateProduct", ReplyAction="http://tempuri.org/IProductService/UpdateProductResponse")]
+        System.Threading.Tasks.Task UpdateProductAsync(Web.ProductService.Product product);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -148,6 +160,22 @@ namespace Web.ProductService {
         
         public System.Threading.Tasks.Task<Web.ProductService.Product[]> GetProductsAsync() {
             return base.Channel.GetProductsAsync();
+        }
+        
+        public void CreateProduct(Web.ProductService.Product product) {
+            base.Channel.CreateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task CreateProductAsync(Web.ProductService.Product product) {
+            return base.Channel.CreateProductAsync(product);
+        }
+        
+        public void UpdateProduct(Web.ProductService.Product product) {
+            base.Channel.UpdateProduct(product);
+        }
+        
+        public System.Threading.Tasks.Task UpdateProductAsync(Web.ProductService.Product product) {
+            return base.Channel.UpdateProductAsync(product);
         }
     }
 }
