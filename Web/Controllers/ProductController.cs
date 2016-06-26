@@ -7,10 +7,12 @@ using Web.Models;
 
 namespace Web.Controllers
 {
+    [Authorize]
     public class ProductController : Controller
     {
 
         ProductService.ProductServiceClient productService = new ProductService.ProductServiceClient();
+
         // GET: Product
         public ActionResult Index()
         {
@@ -58,7 +60,7 @@ namespace Web.Controllers
 
             productService.UpdateProduct(product);
 
-            return View(productModel);
+            return View("Details",productModel);
         }
 
         public ActionResult Edit(string id)
@@ -79,19 +81,68 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Create(ProductModel productModel)
         {
-            var product = new ProductService.Product();
-            product.Id = productModel.Id;
-            product.ProductName = productModel.ProductName;
-            product.Inventory = productModel.Inventory;
+            var productCreate = new ProductService.Product();
+            productCreate.Id = productModel.Id;
+            productCreate.ProductName = productModel.ProductName;
+            productCreate.Inventory = productModel.Inventory;
 
-            productService.CreateProduct(product);
+            productService.CreateProduct(productCreate);
 
-            return View();
+            var products = productService.GetProducts();
+            List<ProductModel> productModels = new List<ProductModel>();
+
+            foreach (var product in products)
+            {
+                ProductModel p = new ProductModel();
+                p.Id = product.Id;
+                p.ProductName = product.ProductName;
+                p.Inventory = product.Inventory;
+                productModels.Add(p);
+            }
+
+            return View("List", productModels);
         }
 
         public ActionResult Create()
         {
             return View();
         }
+
+        [Authorize]
+        public ActionResult Delete(string id)
+        {
+            var products = productService.GetProducts();
+            var product = (from p in products
+                           where p.Id == id
+                           select p).First();
+
+            ProductModel model = new ProductModel();
+            model.Id = product.Id;
+            model.ProductName = product.ProductName;
+            model.Inventory = product.Inventory;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(ProductModel productModel)
+        {
+            productService.DeleteProduct(productModel.Id);
+
+            var products = productService.GetProducts();
+            List<ProductModel> productModels = new List<ProductModel>();
+
+            foreach (var product in products)
+            {
+                ProductModel p = new ProductModel();
+                p.Id = product.Id;
+                p.ProductName = product.ProductName;
+                p.Inventory = product.Inventory;
+                productModels.Add(p);
+            }
+
+            return View("List", productModels);
+        }
+
     }
 }

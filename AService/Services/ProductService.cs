@@ -32,5 +32,10 @@ namespace AService.Services
         {
             productGateway.UpdateProduct(product);
         }
+
+        public void DeleteProduct(string productId)
+        {
+            productGateway.DeleteProduct(productId);
+        }
     }
 }

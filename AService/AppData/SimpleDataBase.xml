@@ -4,37 +4,22 @@
     <Product>
       <Id>1</Id>
       <ProductName>product1</ProductName>
-      <Inventory>11</Inventory>
+      <Inventory>19</Inventory>
     </Product>
     <Product>
-      <Id>2</Id>
-      <ProductName>product2</ProductName>
-      <Inventory>2</Inventory>
+      <Id>20160625035424</Id>
+      <ProductName>ee</ProductName>
+      <Inventory>2253</Inventory>
     </Product>
     <Product>
-      <Id>3</Id>
-      <ProductName>product3</ProductName>
-      <Inventory>3</Inventory>
+      <Id>20160625035431</Id>
+      <ProductName>ff</ProductName>
+      <Inventory>34</Inventory>
     </Product>
     <Product>
-      <Id>4</Id>
-      <ProductName>product4</ProductName>
-      <Inventory>4</Inventory>
-    </Product>
-    <Product>
-      <Id>5</Id>
-      <ProductName>product5</ProductName>
-      <Inventory>5</Inventory>
-    </Product>
-    <Product>
-      <Id>6</Id>
-      <ProductName>product6</ProductName>
-      <Inventory>6</Inventory>
-    </Product>
-    <Product>
-      <Id />
-      <ProductName>qwer</ProductName>
-      <Inventory>12</Inventory>
+      <Id>20160625095701</Id>
+      <ProductName>rr</ProductName>
+      <Inventory>44</Inventory>
     </Product>
   </Products>
 </DataBase>

@@ -22,5 +22,8 @@ namespace AService.Interfaces
 
         [OperationContract]
         void UpdateProduct(Product product);
+
+        [OperationContract]
+        void DeleteProduct(string productId);
     }
 }

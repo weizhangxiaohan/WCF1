@@ -9,8 +9,8 @@ namespace AService.DAL
 {
     public class ProductGateway
     {        
-        private static readonly string path = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
-        //string path = @"C:\Users\Administrator\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
+        //private static readonly string path = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
+        string path = @"C:\Users\Administrator\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
 
         private IEnumerable<Product> products;
         private XElement rootElement;
@@ -31,11 +31,11 @@ namespace AService.DAL
         {
             get
             {
-                if (products == null)
-                {
+                //if (products == null)
+                //{
                     IEnumerable<XElement> productXElements = RootElement.Element("Products").Elements("Product");
                     products = ProductMapping.Convert(productXElements);
-                }
+                //}
                 return products;
 
             }
@@ -47,23 +47,23 @@ namespace AService.DAL
             products = ProductMapping.Convert(productXElements);
         }
 
-        public Product FindByProductCode(string productCode)
+        public Product FindByProductCode(string productId)
         {
             var result = from p in products
-                         where p.Id == productCode
+                         where p.Id == productId
                          select p;
             return result.First();
         }
 
         public IEnumerable<Product> GetAllProducts()
         {
-            return products;
+            return Products;
         }
 
         public void CreateProduct(Product product)
         {
             RootElement.Element("Products").Add(new XElement("Product",
-                new XElement("Id",product.Id),
+                new XElement("Id",DateTime.Now.ToString("yyyyMMddhhmmss")),
                 new XElement("ProductName",product.ProductName),
                 new XElement("Inventory", product.Inventory)));
 
@@ -80,6 +80,18 @@ namespace AService.DAL
 
             productElement.SetElementValue("ProductName", product.ProductName);
             productElement.SetElementValue("Inventory", product.Inventory);
+
+            RootElement.Save(path);
+        }
+
+        public void DeleteProduct(string productId)
+        {
+            var productElements = RootElement.Element("Products").Elements("Product");
+
+            var productElement = (from p in productElements
+                                  where p.Element("Id").Value == productId
+                                  select p).Single();
+            productElement.Remove();
 
             RootElement.Save(path);
         }
