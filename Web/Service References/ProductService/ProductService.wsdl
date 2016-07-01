@@ -294,7 +294,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:9876/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:9876/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:9876/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AService.DAL" />
+      <xsd:import schemaLocation="http://localhost:9876/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AService.DAL.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IProductService_GetProductInventory_InputMessage">
@@ -414,7 +414,7 @@
       <wsa10:EndpointReference>
         <wsa10:Address>http://localhost:9876/ProductService</wsa10:Address>
         <Identity xmlns="http://schemas.xmlsoap.org/ws/2006/02/addressingidentity">
-          <Upn>WIN-20140312ERU\Administrator</Upn>
+          <Upn>marvin.wei@sz.praemium.com</Upn>
         </Identity>
       </wsa10:EndpointReference>
     </wsdl:port>

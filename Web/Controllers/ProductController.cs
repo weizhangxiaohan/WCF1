@@ -7,7 +7,6 @@ using Web.Models;
 
 namespace Web.Controllers
 {
-    [Authorize]
     public class ProductController : Controller
     {
 
@@ -108,7 +107,6 @@ namespace Web.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult Delete(string id)
         {
             var products = productService.GetProducts();

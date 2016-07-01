@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AService.DAL.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,8 @@ namespace AService.DAL
 {
     public class ProductGateway
     {        
-        //private static readonly string path = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
-        string path = @"C:\Users\Administrator\Source\Repos\WCF1\AService\AppData\SimpleDataBase.xml";
+        private static readonly string path = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
+        //string path = @"C:\Users\Administrator\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
 
         private IEnumerable<Product> products;
         private XElement rootElement;
@@ -43,8 +44,6 @@ namespace AService.DAL
 
         public ProductGateway()
         {
-            IEnumerable<XElement> productXElements = RootElement.Element("Products").Elements("Product");
-            products = ProductMapping.Convert(productXElements);
         }
 
         public Product FindByProductCode(string productId)

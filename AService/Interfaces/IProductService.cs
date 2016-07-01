@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel;
 using AService.DAL;
+using AService.DAL.Model;
 
 namespace AService.Interfaces
 {

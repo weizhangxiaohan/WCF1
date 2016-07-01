@@ -16,6 +16,9 @@ namespace AService
             {
                 ServiceHost productService = new ServiceHost(typeof(ProductService));
                 productService.Open();
+
+                ServiceHost userService = new ServiceHost(typeof(UserService));
+                userService.Open();
             }
             catch (Exception ex)
             {
