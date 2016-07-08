@@ -11,14 +11,26 @@ namespace AService.Services
 {
     public class UserService : IUserService
     {
-        UserRepository repository = new UserRepository();
+        private IRepository<DAL.Model.User, string> _repository;
+
+        private IRepository<DAL.Model.User, string> Repository
+        {
+            get
+            {
+                if (_repository == null)
+                {
+                    _repository = new UserRepository();
+                }
+                return _repository;
+            }
+        }
 
         public void RegisterUser(Interfaces.User user)
         {
             DAL.Model.User u = new DAL.Model.User();
             u.UserName = user.UserName;
             u.Password = user.Password;
-            repository.Add(u);
+            Repository.Add(u);
         }
 
         public bool Login(Interfaces.User user)

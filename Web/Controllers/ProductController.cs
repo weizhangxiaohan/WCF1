@@ -87,19 +87,7 @@ namespace Web.Controllers
 
             productService.CreateProduct(productCreate);
 
-            var products = productService.GetProducts();
-            List<ProductModel> productModels = new List<ProductModel>();
-
-            foreach (var product in products)
-            {
-                ProductModel p = new ProductModel();
-                p.Id = product.Id;
-                p.ProductName = product.ProductName;
-                p.Inventory = product.Inventory;
-                productModels.Add(p);
-            }
-
-            return View("List", productModels);
+            return RedirectToAction("List");
         }
 
         public ActionResult Create()
@@ -126,20 +114,7 @@ namespace Web.Controllers
         public ActionResult Delete(ProductModel productModel)
         {
             productService.DeleteProduct(productModel.Id);
-
-            var products = productService.GetProducts();
-            List<ProductModel> productModels = new List<ProductModel>();
-
-            foreach (var product in products)
-            {
-                ProductModel p = new ProductModel();
-                p.Id = product.Id;
-                p.ProductName = product.ProductName;
-                p.Inventory = product.Inventory;
-                productModels.Add(p);
-            }
-
-            return View("List", productModels);
+            return RedirectToAction("List");
         }
 
     }

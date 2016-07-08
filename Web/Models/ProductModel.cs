@@ -11,9 +11,10 @@ namespace Web.Models
     {
         
         public string Id { get; set; }
-        [Required(ErrorMessage = "必须填写产品名称")]
-        [DisplayName("产品名称")]
+        [Required(ErrorMessage = "Product Name is required.")]
+        [DisplayName("Product Name")]
         public string ProductName { get; set; }
+        [Range(1,9999)]
         public int Inventory { get; set; }
     }
 }

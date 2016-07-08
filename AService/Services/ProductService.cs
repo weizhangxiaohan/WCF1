@@ -11,32 +11,58 @@ namespace AService.Services
 {
     public class ProductService : IProductService
     {
-        ProductGateway productGateway = new ProductGateway();
+        private ProductGateway _productGateway;
+        private Logs.ILogger _logger;
+
+        private ProductGateway ProductGateway
+        {
+            get
+            {
+                if (_productGateway == null)
+                {
+                    _productGateway = new ProductGateway();
+                }
+                return _productGateway;
+            }
+        }
+
+        private Logs.ILogger Logger
+        {
+            get
+            {
+                if (_logger == null)
+                {
+                    _logger = new Logs.Log4NetLogger();
+                }
+                return _logger;
+            }
+        }
 
         public void CreateProduct(Product product)
         {
-            productGateway.CreateProduct(product);
+            ProductGateway.CreateProduct(product);
         }
 
         public int GetProductInventory(string productCode)
         {
-            Product product = productGateway.FindByProductCode(productCode);
+            Product product = ProductGateway.FindByProductCode(productCode);
             return product.Inventory;
         }
 
         public IEnumerable<Product> GetProducts()
         {
-            return productGateway.GetAllProducts();
+            return ProductGateway.GetAllProducts();
         }
 
         public void UpdateProduct(Product product)
         {
-            productGateway.UpdateProduct(product);
+            ProductGateway.UpdateProduct(product);
         }
 
         public void DeleteProduct(string productId)
         {
-            productGateway.DeleteProduct(productId);
+            ProductGateway.DeleteProduct(productId);
+            Logger.Log("Delete a product.ProductId is " + productId);
         }
     }
 }

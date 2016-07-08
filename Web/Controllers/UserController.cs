@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity.Owin;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -8,9 +10,23 @@ using Web.Models;
 
 namespace Web.Controllers
 {
+    [AllowAnonymous]
     public class UserController : Controller
     {
         UserService.UserServiceClient userService = new UserService.UserServiceClient();
+
+        private ApplicationSignInManager _signInManager;
+        public ApplicationSignInManager SignInManager
+        {
+            get
+            {
+                return _signInManager ?? HttpContext.GetOwinContext().Get<ApplicationSignInManager>();
+            }
+            private set
+            {
+                _signInManager = value;
+            }
+        }
 
         public ActionResult Register()
         {
@@ -34,13 +50,9 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(UserModel user)
+        public async Task<ActionResult> Login(UserModel user,string returnUrl)
         {
-            //Membership.ValidateUser(user.UserName, user.PassWord);
-            FormsAuthentication.RedirectFromLoginPage(user.UserName,false);
-
-            //FormsAuthentication.Authenticate(user.UserName,user.PassWord);
-            FormsAuthentication.SetAuthCookie(user.UserName,false);
+            var result = await SignInManager.PasswordSignInAsync(user.UserName, user.PassWord, true, shouldLockout: false);
             return RedirectToAction("List","Product");
         }
     }
