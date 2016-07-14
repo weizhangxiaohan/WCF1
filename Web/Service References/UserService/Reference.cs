@@ -23,6 +23,9 @@ namespace Web.UserService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string EmailField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -35,6 +38,19 @@ namespace Web.UserService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
             }
         }
         
@@ -84,11 +100,11 @@ namespace Web.UserService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/RegisterUser", ReplyAction="http://tempuri.org/IUserService/RegisterUserResponse")]
         System.Threading.Tasks.Task RegisterUserAsync(Web.UserService.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/IsExist", ReplyAction="http://tempuri.org/IUserService/IsExistResponse")]
-        bool IsExist(Web.UserService.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Login", ReplyAction="http://tempuri.org/IUserService/LoginResponse")]
+        bool Login(Web.UserService.User user);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/IsExist", ReplyAction="http://tempuri.org/IUserService/IsExistResponse")]
-        System.Threading.Tasks.Task<bool> IsExistAsync(Web.UserService.User user);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Login", ReplyAction="http://tempuri.org/IUserService/LoginResponse")]
+        System.Threading.Tasks.Task<bool> LoginAsync(Web.UserService.User user);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/IsExistByUserName", ReplyAction="http://tempuri.org/IUserService/IsExistByUserNameResponse")]
         bool IsExistByUserName(string userName);
@@ -132,12 +148,12 @@ namespace Web.UserService {
             return base.Channel.RegisterUserAsync(user);
         }
         
-        public bool IsExist(Web.UserService.User user) {
-            return base.Channel.IsExist(user);
+        public bool Login(Web.UserService.User user) {
+            return base.Channel.Login(user);
         }
         
-        public System.Threading.Tasks.Task<bool> IsExistAsync(Web.UserService.User user) {
-            return base.Channel.IsExistAsync(user);
+        public System.Threading.Tasks.Task<bool> LoginAsync(Web.UserService.User user) {
+            return base.Channel.LoginAsync(user);
         }
         
         public bool IsExistByUserName(string userName) {

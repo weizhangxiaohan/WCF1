@@ -11,8 +11,8 @@ namespace AService.DAL.Repository
     {
         T FindById(TId id);
 
-        void Add(T t);
+        IEnumerable<T> Find(Predicate<T> p);
 
-        //IEnumerable<User> Find(s);
+        void Add(T t);        
     }
 }

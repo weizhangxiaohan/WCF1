@@ -10,8 +10,8 @@ namespace AService.DAL
 {
     public class ProductGateway
     {        
-        private static readonly string path = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
-        //string path = @"C:\Users\Administrator\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
+        private static readonly string XML_FILE_PATH = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
+        //private static readonly string XML_FILE_PATH = @"C:\Users\Administrator\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
 
         private IEnumerable<Product> products;
         private XElement rootElement;
@@ -22,7 +22,7 @@ namespace AService.DAL
             {
                 if (rootElement == null)
                 {
-                    rootElement = XElement.Load(path);
+                    rootElement = XElement.Load(XML_FILE_PATH);
                 }
                 return rootElement;
             }
@@ -66,7 +66,7 @@ namespace AService.DAL
                 new XElement("ProductName",product.ProductName),
                 new XElement("Inventory", product.Inventory)));
 
-            RootElement.Save(path);
+            RootElement.Save(XML_FILE_PATH);
         }
 
         public void UpdateProduct(Product product)
@@ -80,7 +80,7 @@ namespace AService.DAL
             productElement.SetElementValue("ProductName", product.ProductName);
             productElement.SetElementValue("Inventory", product.Inventory);
 
-            RootElement.Save(path);
+            RootElement.Save(XML_FILE_PATH);
         }
 
         public void DeleteProduct(string productId)
@@ -92,7 +92,7 @@ namespace AService.DAL
                                   select p).Single();
             productElement.Remove();
 
-            RootElement.Save(path);
+            RootElement.Save(XML_FILE_PATH);
         }
     }
 

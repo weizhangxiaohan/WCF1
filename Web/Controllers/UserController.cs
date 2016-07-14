@@ -38,7 +38,8 @@ namespace Web.Controllers
         {
             UserService.User u = new UserService.User();
             u.UserName = user.UserName;
-            u.Password = user.PassWord;            
+            u.Password = user.PassWord;
+            u.Email = user.Email;          
 
             userService.RegisterUser(u);
             return View();
@@ -54,6 +55,15 @@ namespace Web.Controllers
         {
             var result = await SignInManager.PasswordSignInAsync(user.UserName, user.PassWord, true, shouldLockout: false);
             return RedirectToAction("List","Product");
+        }
+
+        public JsonResult CheckUserNameIsExist(string userName)
+        {
+            if (!userService.IsExistByUserName(userName))
+            {
+                return Json(true,JsonRequestBehavior.AllowGet);
+            }
+            return Json(false,JsonRequestBehavior.AllowGet);
         }
     }
 }

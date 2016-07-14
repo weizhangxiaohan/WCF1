@@ -33,6 +33,11 @@ namespace AService.DAL.Repository
             }
         }
 
-
+        public IEnumerable<User> Find(Predicate<User> p)
+        {
+            return (from u in db.Users
+                    where p(u)
+                    select u);
+        }
     }
 }

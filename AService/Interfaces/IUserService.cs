@@ -17,8 +17,8 @@ namespace AService.Interfaces
         bool Login(User user);
         //[OperationContract]
         //bool IsExist(User user);
-        //[OperationContract]
-        //bool IsExistByUserName(string userName);
+        [OperationContract]
+        bool IsExistByUserName(string userName);
     }
 
     [DataContract]
@@ -28,5 +28,7 @@ namespace AService.Interfaces
         public string UserName { get; set; }
         [DataMember]
         public string Password { get; set; }
+        [DataMember]
+        public string Email { get; set; }
     }
 }

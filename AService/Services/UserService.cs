@@ -30,6 +30,7 @@ namespace AService.Services
             DAL.Model.User u = new DAL.Model.User();
             u.UserName = user.UserName;
             u.Password = user.Password;
+            u.Email = user.Email;
             Repository.Add(u);
         }
 
@@ -43,9 +44,9 @@ namespace AService.Services
         //    throw new NotImplementedException();
         //}
 
-        //public bool IsExistByUserName(string userName)
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public bool IsExistByUserName(string userName)
+        {
+            return Repository.Find(u => u.UserName == userName).Count() > 0;
+        }
     }
 }

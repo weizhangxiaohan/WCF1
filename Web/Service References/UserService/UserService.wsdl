@@ -138,7 +138,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WS2007HttpBinding_IUserService_IsExist_Input_policy">
+  <wsp:Policy wsu:Id="WS2007HttpBinding_IUserService_Login_Input_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
@@ -157,7 +157,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="WS2007HttpBinding_IUserService_IsExist_output_policy">
+  <wsp:Policy wsu:Id="WS2007HttpBinding_IUserService_Login_output_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <sp:SignedParts xmlns:sp="http://docs.oasis-open.org/ws-sx/ws-securitypolicy/200702">
@@ -227,11 +227,11 @@
   <wsdl:message name="IUserService_RegisterUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:RegisterUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IUserService_IsExist_InputMessage">
-    <wsdl:part name="parameters" element="tns:IsExist" />
+  <wsdl:message name="IUserService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
   </wsdl:message>
-  <wsdl:message name="IUserService_IsExist_OutputMessage">
-    <wsdl:part name="parameters" element="tns:IsExistResponse" />
+  <wsdl:message name="IUserService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
   <wsdl:message name="IUserService_IsExistByUserName_InputMessage">
     <wsdl:part name="parameters" element="tns:IsExistByUserName" />
@@ -244,9 +244,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/RegisterUser" message="tns:IUserService_RegisterUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/RegisterUserResponse" message="tns:IUserService_RegisterUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="IsExist">
-      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/IsExist" message="tns:IUserService_IsExist_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/IsExistResponse" message="tns:IUserService_IsExist_OutputMessage" />
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Login" message="tns:IUserService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/LoginResponse" message="tns:IUserService_Login_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="IsExistByUserName">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/IsExistByUserName" message="tns:IUserService_IsExistByUserName_InputMessage" />
@@ -267,14 +267,14 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="IsExist">
-      <soap12:operation soapAction="http://tempuri.org/IUserService/IsExist" style="document" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/IUserService/Login" style="document" />
       <wsdl:input>
-        <wsp:PolicyReference URI="#WS2007HttpBinding_IUserService_IsExist_Input_policy" />
+        <wsp:PolicyReference URI="#WS2007HttpBinding_IUserService_Login_Input_policy" />
         <soap12:body use="literal" />
       </wsdl:input>
       <wsdl:output>
-        <wsp:PolicyReference URI="#WS2007HttpBinding_IUserService_IsExist_output_policy" />
+        <wsp:PolicyReference URI="#WS2007HttpBinding_IUserService_Login_output_policy" />
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
