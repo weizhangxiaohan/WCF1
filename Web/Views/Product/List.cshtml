@@ -1,39 +1,68 @@
-﻿@model IEnumerable<Web.Models.ProductModel>
+﻿@using PagedList.Mvc;
+@using PagedList;
+
+@using StackExchange.Profiling;
+
+@model IPagedList<ProductModel>
 
 @{
     ViewBag.Title = "List";
 }
 
-<h2>List</h2>
+<h2>Product List</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Inventory)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProductName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Inventory)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().Inventory)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.First().UnitPrice)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ProductName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Inventory)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UnitPrice)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+                    </td>
+                    <td>
+                        @Html.ActionLink("AddToShoppingCart", "AddToShoppingCart", new { id = item.Id })
+                    </td>
+                </tr>
 }
 
-</table>
+            <tr>
+                <td colspan="5" class="active text-center">
+                    @Html.PagedListPager((IPagedList)Model,
+                             pageIndex => Ajax.ActionLink(pageIndex.ToString(),"List",new AjaxOptions { UpdateTargetId = "rightDiv"}).ToString(),
+                             new PagedListRenderOptions { DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded })
+
+                </td>
+            </tr>
+
+
+        </table>
+
+
+@MiniProfiler.RenderIncludes()
+

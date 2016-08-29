@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AService.Interfaces;
 using AService.DAL;
 using AService.DAL.Model;
+using AService.DAL.Products;
 
 namespace AService.Services
 {

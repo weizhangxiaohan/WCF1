@@ -1,0 +1,26 @@
+﻿@using Web.Models;
+@using Web.Controllers;
+
+@model ProductCategoryViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Categorys</h2>
+
+<table>
+    @foreach (var item in Model.Categorys)
+    {
+        <tr>
+            <td>
+            <span>
+                @Html.ActionLink(item.Name, "")
+            </span>
+            </td>
+        </tr>        
+    }
+</table>
+
+
+

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 
-namespace AService.DAL
+namespace AService.DAL.Products
 {
     public class ProductGateway
     {        
@@ -42,10 +42,6 @@ namespace AService.DAL
             }
         }
 
-        public ProductGateway()
-        {
-        }
-
         public Product FindByProductCode(string productId)
         {
             var result = from p in products
@@ -64,7 +60,8 @@ namespace AService.DAL
             RootElement.Element("Products").Add(new XElement("Product",
                 new XElement("Id",DateTime.Now.ToString("yyyyMMddhhmmss")),
                 new XElement("ProductName",product.ProductName),
-                new XElement("Inventory", product.Inventory)));
+                new XElement("Inventory", product.Inventory),
+                new XElement("UnitPrice",product.UnitPrice)));
 
             RootElement.Save(XML_FILE_PATH);
         }
@@ -79,6 +76,7 @@ namespace AService.DAL
 
             productElement.SetElementValue("ProductName", product.ProductName);
             productElement.SetElementValue("Inventory", product.Inventory);
+            productElement.SetElementValue("UnitPrice", product.UnitPrice);
 
             RootElement.Save(XML_FILE_PATH);
         }
@@ -100,16 +98,19 @@ namespace AService.DAL
     {
         public static IEnumerable<Product> Convert(IEnumerable<XElement> productXElements)
         {
-            List<Product> products = new List<Product>();
+            IList<Product> products = new List<Product>();
             foreach (var xelement in productXElements)
             {
                 Product product = new Product();
                 product.Id = xelement.Element("Id").Value;
                 product.ProductName = xelement.Element("ProductName").Value;
                 product.Inventory = int.Parse(xelement.Element("Inventory").Value);
+                if (xelement.Element("UnitPrice") != null) { 
+                    product.UnitPrice = decimal.Parse(xelement.Element("UnitPrice").Value);
+                }
                 products.Add(product);
             }
             return products;
-        }
+        }      
     }
 }

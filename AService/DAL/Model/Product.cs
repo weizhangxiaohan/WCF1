@@ -16,5 +16,7 @@ namespace AService.DAL.Model
         public string ProductName { get; set; }
         [DataMember]
         public int Inventory { get; set; }
+        [DataMember]
+        public decimal UnitPrice { get; set; }
     }
 }

@@ -16,5 +16,7 @@ namespace Web.Models
         public string ProductName { get; set; }
         [Range(1,9999)]
         public int Inventory { get; set; }
+        [DisplayName("Unit Price")]
+        public decimal UnitPrice { get; set; }
     }
 }

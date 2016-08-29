@@ -61,7 +61,7 @@
   <ItemGroup>
     <Compile Include="DAL\Repository\IRepository.cs" />
     <Compile Include="DAL\Model\Product.cs" />
-    <Compile Include="DAL\ProductGateway.cs" />
+    <Compile Include="DAL\Product\ProductGateway.cs" />
     <Compile Include="DAL\Model\User.cs" />
     <Compile Include="DAL\UserDbContext.cs" />
     <Compile Include="DAL\Repository\UserRepository.cs" />

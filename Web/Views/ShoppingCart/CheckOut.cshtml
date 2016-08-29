@@ -1,0 +1,15 @@
+﻿@model Web.Models.ShoppingCartModel
+
+@{
+    ViewBag.Title = "CheckOut";
+}
+
+
+<h2>CheckOut</h2>
+
+<p>Total Prices：<span style="color:red">@Model.TotalPrice</span></p> 
+
+@Html.ActionLink("Pay and use zhifubao.","PayUseZhiFuBao") |
+
+@Html.ActionLink("Pay and use weixin.", "PayUseWeiXin")
+
