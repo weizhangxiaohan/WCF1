@@ -36,10 +36,13 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Register(UserModel user)
         {
-            UserService.User u = new UserService.User();
-            u.UserName = user.UserName;
-            u.Password = user.PassWord;
-            u.Email = user.Email;          
+            var u = new UserService.User
+            {
+                UserName = user.UserName,
+                Password = user.PassWord,
+                Email = user.Email
+            };
+
 
             userService.RegisterUser(u);
             return View();

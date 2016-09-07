@@ -54,15 +54,14 @@
             <tr>
                 <td colspan="5" class="active text-center">
                     @Html.PagedListPager((IPagedList)Model,
-                             pageIndex => Ajax.ActionLink(pageIndex.ToString(),"List",new AjaxOptions { UpdateTargetId = "rightDiv"}).ToString(),
-                             new PagedListRenderOptions { DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded })
+                             pageIndex => Url.Action("List",new { pageIndex = pageIndex }),
+                             PagedListRenderOptions.EnableUnobtrusiveAjaxReplacing(
+                                 new PagedListRenderOptions { DisplayLinkToNextPage = PagedListDisplayMode.IfNeeded,DisplayLinkToPreviousPage = PagedListDisplayMode.IfNeeded },
+                                 new AjaxOptions { UpdateTargetId = "rightDiv" , InsertionMode = InsertionMode.Replace,HttpMethod="Get" }))
 
                 </td>
             </tr>
 
-
         </table>
-
-
 @MiniProfiler.RenderIncludes()
 

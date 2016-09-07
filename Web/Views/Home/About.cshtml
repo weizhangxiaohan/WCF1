@@ -5,3 +5,9 @@
 <h3>@ViewBag.Message</h3>
 
 <p>Use this area to provide additional information.</p>
+
+@Ajax.ActionLink("000<<00","about",new AjaxOptions { HttpMethod = "get",InsertionMode = InsertionMode.Replace,UpdateTargetId="sdf" }).ToHtmlString()
+
+<br />
+@Ajax.ActionLink("111<<11", "about", new AjaxOptions { HttpMethod = "get", InsertionMode = InsertionMode.Replace, UpdateTargetId = "sdf" }).ToString()
+

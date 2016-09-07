@@ -1,0 +1,252 @@
+
+ 
+ Date:2016-09-07 10:09:41,724 
+ ThreadID:[5] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:09:41,733 
+ ThreadID:[5] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:09:41,733 
+ ThreadID:[5] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:09:42,357 
+ ThreadID:[5] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:11:58,616 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:11:58,616 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:11:58,616 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:11:58,620 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:12:01,600 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:12:01,600 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:12:01,600 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:12:01,601 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:14:33,855 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:14:33,876 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:14:33,877 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:14:34,507 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:18:26,390 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:18:26,398 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:18:26,398 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:18:26,939 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:29:27,193 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:29:27,193 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:29:27,213 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:29:27,213 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:29:27,214 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:29:27,215 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:29:31,300 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:29:31,300 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:30:59,923 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:30:59,923 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-07 10:30:59,945 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:30:59,945 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-07 10:30:59,947 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:30:59,947 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-07 10:31:04,048 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 
+
+ 
+ Date:2016-09-07 10:31:04,048 
+ ThreadID:[7] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 

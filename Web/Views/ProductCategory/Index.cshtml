@@ -15,7 +15,7 @@
         <tr>
             <td>
             <span>
-                @Html.ActionLink(item.Name, "")
+                @Ajax.ActionLink(item.Name,"List","Product",new  { pageIndex = 1 },new AjaxOptions {HttpMethod="Get",UpdateTargetId = "rightDiv" })
             </span>
             </td>
         </tr>        

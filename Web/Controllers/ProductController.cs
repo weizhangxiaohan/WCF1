@@ -9,6 +9,9 @@ using Web.Models;
 using PagedList;
 using System.Threading;
 using StackExchange.Profiling;
+using Infrastructure.Log;
+using System.Web.Http.Filters;
+using Web.Custom;
 
 namespace Web.Controllers
 {
@@ -17,12 +20,13 @@ namespace Web.Controllers
 
         ProductService.ProductServiceClient productService = new ProductService.ProductServiceClient();
 
-        // GET: Product
+        [MyActionFilter]
         public ActionResult Index()
         {
             return View();
         }
 
+        [HandleError(ExceptionType = typeof(ArgumentException),View = "MyError")]
         public ActionResult List(int pageIndex = 1)
         {
             var products = productService.GetProducts();
@@ -155,5 +159,10 @@ namespace Web.Controllers
             return RedirectToAction("Detail","ShoppingCart");
         }
 
+        //protected override void OnException(ExceptionContext filterContext)
+        //{
+        //    base.OnException(filterContext);
+        //    LogHelper.Error("ErrorMessage:"+filterContext.Exception.Message+";Stack:"+filterContext.Exception.StackTrace);
+        //}
     }
 }

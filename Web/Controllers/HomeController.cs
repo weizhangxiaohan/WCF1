@@ -8,9 +8,14 @@ namespace Web.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+
+        public string Index()
         {
-            return View();
+            return "This is the Index action on the Home controller";
         }
 
         public ActionResult About()
