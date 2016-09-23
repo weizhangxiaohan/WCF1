@@ -18,5 +18,7 @@ namespace Web.Models
         public int Inventory { get; set; }
         [DisplayName("Unit Price")]
         public decimal UnitPrice { get; set; }
+
+        public ProductCategory Category { get; set; }
     }
 }

@@ -15,10 +15,10 @@ namespace Web.Controllers
             ProductCategoryViewModel model = new ProductCategoryViewModel();
             model.Categorys = new List<ProductCategory>();
             model.Categorys.Add(new ProductCategory { Name = "All" });
-            model.Categorys.Add(new ProductCategory { Name = "111"});
-            model.Categorys.Add(new ProductCategory { Name = "222" });
-            model.Categorys.Add(new ProductCategory { Name = "333" });
-            model.Categorys.Add(new ProductCategory { Name = "444" });
+            model.Categorys.Add(new ProductCategory { Name = "Foods"});
+            model.Categorys.Add(new ProductCategory { Name = "Shoes" });
+            model.Categorys.Add(new ProductCategory { Name = "Phones" });
+            model.Categorys.Add(new ProductCategory { Name = "Virtrul" });
             return PartialView(model);
         }
     }

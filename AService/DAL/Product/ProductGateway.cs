@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace AService.DAL.Products
 {
-    public class ProductGateway
+    public class ProductGateway : IProductRepository
     {        
         private static readonly string XML_FILE_PATH = @"C:\Users\marvin.wei\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";
         //private static readonly string XML_FILE_PATH = @"C:\Users\Administrator\Source\Repos\WCF1\AService\App_Data\SimpleDataBase.xml";

@@ -1,0 +1,28 @@
+
+ 
+ Date:2016-09-09 10:51:32,564 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuting
+ 
+
+ 
+ Date:2016-09-09 10:51:32,586 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnActionExecuted
+ 
+
+ 
+ Date:2016-09-09 10:51:32,588 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuting
+ 
+
+ 
+ Date:2016-09-09 10:51:33,292 
+ ThreadID:[6] 
+ Level:  INFO  
+ Message:MyActionFilter -- OnResultExecuted
+ 

@@ -371,9 +371,7 @@
     <Content Include="Views\ProductCategory\Index.cshtml" />
     <Content Include="Views\Shared\MyError.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />

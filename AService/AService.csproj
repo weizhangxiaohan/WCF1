@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\Product\IProductRepository.cs" />
     <Compile Include="DAL\Repository\IRepository.cs" />
     <Compile Include="DAL\Model\Product.cs" />
     <Compile Include="DAL\Product\ProductGateway.cs" />
